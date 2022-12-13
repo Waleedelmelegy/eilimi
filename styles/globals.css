@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "Noto";
+  src: local("/assets/fonts/NotoSans-Regular.ttf"), url("/assets/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto-Black";
+  src: local("/assets/fonts/NotoSans-Black.ttf"), url("/assets/fonts/NotoSans-Black.ttf") format("truetype");
+  font-display: swap;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fac213;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  border: 3px solid fac213;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: white;
+}
+
+label {
+  font-size: .75rem;
+  padding-bottom: 16px;
+  display: block;
+}
+
+input, textarea {
+  background: #E6E6E6;
+  font-size: .75rem;
+  padding: .85rem;
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+input::placeholder {
+  color: #C5C5C5;
+
+}
+
+.w-48 {
+  width: 48%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto-Black';
+  font-style: normal;
+  font-weight: 700;
+  text-transform: capitalize;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: hsla(0, 0%, 100%, .8);
+  /* text-shadow: 1px 1px 0 white; */
+  color: rgba(0, 0, 0, 1);
+  --bs-text-opacity: 1;
+  display: block;
+  margin: 0;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: clamp(2rem, 9.5vw, 4.5rem);
+}
+
+h3 {
+  font-size: clamp(3rem, 6.5vw, 7.5rem);
+}
+
+h1 span::after, h2 span::after, h3 span::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 20px;
+  background-color: #fac213;
+  left: 0;
+  bottom: 5%;
+  z-index: -1;
+  position: absolute;
+}
+
+.container {
+  padding: 0 0 0 110px;
+  position: relative;
+}
+
+.bg-black {
+  background-color: #302F36;
+}
+
+.bg-dark {
+  background-color: #201D1F;
+
+}
+
+.main {
+  min-height: 100vh;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 1.5rem 0;
+  background-color: #201D1F;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: black;
+  }
+
+
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    padding-left: 0;
+    padding-top: 60px;
+  }
+
+  .container {
+    padding: 0;
+  }
+}

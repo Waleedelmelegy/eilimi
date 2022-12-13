@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  width: 100%;
+  h3 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 1px 1px 0 black;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  .cards {
+    width: 45%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    .cards {
+      width: 100%;
+    }
+  }
+}

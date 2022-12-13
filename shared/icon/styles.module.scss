@@ -1,0 +1,17 @@
+.icon_wrapper {
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  z-index: 1;
+
+  &.pointer {
+    cursor: pointer;
+  }
+  &.inherit {
+    cursor: inherit;
+  }
+
+  &.rotate {
+    transform: rotate(180deg);
+  }
+}

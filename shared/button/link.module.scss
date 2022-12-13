@@ -1,0 +1,46 @@
+.link {
+  border-radius: 46px;
+  padding: 0.5rem 1rem;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: inline-block;
+}
+.fill {
+  background-color: #fac213;
+  display: inline-flex;
+  justify-content: center;
+  &:hover {
+    background-color: #fac013e1;
+  }
+  .icon {
+    padding-left: 10px;
+  }
+}
+.outline {
+  border: 1px solid #5f5f5f;
+  display: inline-flex;
+  color: white;
+  justify-content: center;
+
+  &:hover {
+    background-color: gray;
+  }
+  .icon {
+    padding-left: 10px;
+  }
+}
+.transparent {
+  background-color: white;
+  display: inline-flex;
+
+  justify-content: center;
+
+  &:hover {
+    background-color: gray;
+  }
+  .icon {
+    padding-left: 10px;
+  }
+}

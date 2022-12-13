@@ -1,0 +1,65 @@
+.container {
+  width: 100%;
+  position: relative;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 30%);
+  background-color: #302f36;
+  .readmore {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-mask: url("/assets/masks/mask.svg") 50% 50%/100% no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center top;
+    cursor: pointer;
+    img {
+      transition: all 2s ease;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    -webkit-mask: url("/assets/masks/mask-full.svg") 50% 50%/100% no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center top;
+    cursor: pointer;
+    img {
+      transition: all 2s ease;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &:hover {
+    margin-top: -1rem;
+    img {
+      transform: scale(1.1);
+    }
+  }
+  h4 {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    right: 4%;
+    margin: 0;
+    span {
+      font-size: 1rem;
+      background: #1d1d1d;
+      padding: 0.5rem;
+      text-transform: capitalize;
+      display: inline;
+      clear: both;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      line-height: 2;
+      color: white;
+    }
+  }
+}

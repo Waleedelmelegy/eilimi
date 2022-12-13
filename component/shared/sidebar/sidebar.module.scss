@@ -1,0 +1,125 @@
+.container {
+  width: 110px;
+  background-color: #fac213;
+  position: fixed;
+  height: 100vh;
+  transition: all 0.3s ease;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  .menuTriger {
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+    .burgerIcon,
+    .burgerIcon::before,
+    .burgerIcon::after {
+      background-color: #000;
+      position: absolute;
+      width: 30px;
+      right: 40px;
+      height: 4px;
+      transform: none;
+      display: block;
+    }
+  }
+  &.show {
+    width: 400px;
+    .menuTriger {
+      height: 50px;
+      padding-top: 0;
+      width: 50px;
+      align-items: flex-end;
+      .burgerIcon {
+        transform: rotate(45deg);
+        transition: all 0.2s ease;
+        &::before {
+          content: "";
+          transform: rotate(90deg);
+          right: 0;
+        }
+      }
+    }
+    .logo {
+      justify-content: start;
+      align-items: flex-start;
+      margin-left: 5px;
+    }
+  }
+  &.closed {
+    .burgerIcon {
+      top: 50%;
+      &::before {
+        content: "";
+        top: -10px;
+        right: 0;
+      }
+      &::after {
+        content: "";
+        top: 10px;
+        left: 0;
+        width: 15px;
+      }
+    }
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: fixed;
+    z-index: 10;
+  }
+  .menu {
+    display: block;
+    height: 100%;
+    transition: all 0.2s ease;
+
+    ul {
+      padding-top: 60px;
+      display: block;
+      list-style: none;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 24px;
+
+      li {
+        line-height: 40px;
+        background-image: url("/assets/arrow-right.svg");
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 8px;
+        a {
+          display: block;
+          span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #000000;
+            padding: 5px;
+            &.active {
+              background-color: #000;
+              color: #fac213;
+            }
+          }
+        }
+      }
+    }
+    .social {
+      padding-left: 40px;
+      display: flex;
+      column-gap: 14px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    height: 60px;
+    &.show {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
