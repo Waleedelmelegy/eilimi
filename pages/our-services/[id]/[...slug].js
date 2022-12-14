@@ -34,7 +34,9 @@ const Slug = ({ services }) => {
         <main className='main'>
           <HeaderSolid>
             <h2>Strategize</h2>
-            <h1>Business Growth Mentorship</h1>
+            <h1>
+              {services.name}
+            </h1>
           </HeaderSolid>
           <Details services={services} />
           <ProjectForm />
@@ -48,17 +50,17 @@ const Slug = ({ services }) => {
 export const getServerSideProps = async ctx => {
   const [response] = await Promise.all([
     apiSSR(
-      'subService',
-      JSON.stringify({ lang: ctx.locale, service_id: ctx.params.id }),
+      'SubServiceDetails',
+      JSON.stringify({ lang: ctx.locale, id: ctx.params.id }),
       'POST'
     )
   ])
   const direction = ctx.locale
-  console.log(response)
   return {
     props: {
       ...(await serverSideTranslations(ctx.locale, ['common'])),
-      services: response.status === 200 && response.data ? response.data : [],
+      services:
+        response.status === 200 && response.data ? response.data[0] : [],
       locale: direction
     }
   }

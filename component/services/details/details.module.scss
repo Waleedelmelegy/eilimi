@@ -14,11 +14,7 @@
     .left {
       width: 70%;
       font-size: 1.5rem;
-      img {
-        width: 100%;
-        height: auto;
-        margin: 2rem 0;
-      }
+
       .html {
         line-height: 1.5;
         h2,
@@ -34,13 +30,12 @@
     }
     .right {
       width: 25%;
-      h3 {
-        font-size: 1rem;
-        -webkit-text-stroke-width: 0;
-        color: #fac213;
-        margin-top: 0;
-        margin-bottom: 1rem;
+      img {
+        width: 100%;
+        height: auto;
+        margin: 2rem 0;
       }
+
       .card {
         margin-bottom: 1rem;
       }

@@ -1,0 +1,64 @@
+.container {
+  padding: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    padding-bottom: 3rem;
+  }
+  .testimonial {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .block {
+      border-radius: 50px;
+      border: 4px solid white;
+      color: white;
+      position: relative;
+      padding: 8%;
+      width: 48%;
+      .signuture {
+        display: flex;
+        padding-top: 10%;
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 0 0.5rem;
+          label,
+          span {
+            color: #fac213;
+            padding: 0;
+          }
+        }
+      }
+
+      &::before {
+        content: "";
+        background-image: url("/assets/icons/ic_testi_left.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        background-color: #201d1f;
+        position: absolute;
+        left: -4%;
+        top: -11%;
+        width: 130px;
+        height: 130px;
+      }
+      &::after {
+        content: "";
+        background-image: url("/assets/icons/ic_testi_right.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+        background-color: #201d1f;
+        position: absolute;
+        right: -4%;
+        bottom: -11%;
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+}

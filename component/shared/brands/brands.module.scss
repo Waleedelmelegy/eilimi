@@ -10,19 +10,26 @@
     color: white;
     margin-bottom: 3rem;
   }
-  .cards {
-    width: 45%;
-
-    img {
-      width: 100%;
-      object-fit: cover;
+  .brands {
+    display: flex;
+    flex-grow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .cards {
+      width: 31%;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
 @media only screen and (max-width: 800px) {
   .container {
-    .cards {
-      width: 100%;
+    .brands {
+      .cards {
+        width: 100%;
+      }
     }
   }
 }

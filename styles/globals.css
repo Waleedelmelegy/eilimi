@@ -161,7 +161,9 @@ h1 span::after, h2 span::after, h3 span::after {
   width: 100%;
 }
 
-
+.carousel-root {
+  width: 100%;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

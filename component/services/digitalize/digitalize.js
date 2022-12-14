@@ -14,7 +14,7 @@ const Digitalize = ({ listings }) => {
       <div className={styles.services}>
       {listings?.sub_services?.map(i =>
           <div className={styles.block} key={i.id}>
-            <Link href={`/out-services/${i.id}/${i.name.en.replaceAll(' ', '-').toLowerCase()}`} title={i.name.en}>
+            <Link href={`/our-services/${i.id}/${i.name.en.replaceAll(' ', '-').toLowerCase()}`} title={i.name.en}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_URL_IMAGES}${i.icon}`}
                 alt={i.name.en}

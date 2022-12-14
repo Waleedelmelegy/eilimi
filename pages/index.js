@@ -10,9 +10,11 @@ import { useRouter } from 'next/router'
 import Blogs from '../component/shared/blogs/blogs'
 import Careers from '../component/shared/careers/careers'
 import { apiSSR } from '../utility/api'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Explore from '../component/home/explore/explore'
+import Testimonial from '../component/home/testimonial/testimonial'
+import Clients from '../component/home/clients/clients'
 
 const Home = ({ posts }) => {
   const router = useRouter()
@@ -37,25 +39,29 @@ const Home = ({ posts }) => {
           <Services />
           <Explore />
           <Blogs posts={posts} />
+          <Clients />
+          <Testimonial />
           <Careers />
-
           <Footer />
         </main>
       </div>
     </Fragment>
   )
 }
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const [posts] = await Promise.all([apiSSR('blogs', null, 'GET')])
-  const direction = context.locale;
+  const direction = context.locale
 
   return {
     props: {
       ...(await serverSideTranslations(context.locale, ['common'])),
-      posts: posts?.status === 200 && posts?.data ? posts?.data?.sort(() => Math.random() - 0.5).slice(0, 4) : [],
+      posts:
+        posts.status === 200 && posts.data
+          ? posts.data.sort(() => Math.random() - 0.5).slice(0, 4)
+          : [],
       locale: direction
     }
-  };
+  }
 }
 
 export default Home

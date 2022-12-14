@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  flex-direction: column;
+  h3 {
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    margin-bottom: 1rem;
+  }
+  .logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

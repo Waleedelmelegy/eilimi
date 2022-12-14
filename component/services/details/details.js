@@ -21,27 +21,27 @@ const Details = ({ services }) => {
             </Link>
           </li>
           <li>
-            {services.title}
+            {services.name}
           </li>
         </ul>
       </div>
-      <h1>
-        {services.title}
-      </h1>
+
       <div className={styles.content}>
         <div className={styles.left}>
-          <Image
-            src={services.image}
-            alt={services.title}
-            width={1200}
-            height={1000}
-            className='image'
-          />
           <div
             className={styles.html}
             dangerouslySetInnerHTML={{
-              __html: `${services.content}`
+              __html: `${services.description}`
             }}
+          />
+        </div>
+        <div className={styles.right}>
+          <Image
+            src={services.image}
+            alt={services.name}
+            width={1200}
+            height={1000}
+            className='image'
           />
         </div>
       </div>
