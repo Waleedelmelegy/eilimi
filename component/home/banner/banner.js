@@ -10,7 +10,13 @@ import { Carousel } from 'react-responsive-carousel'
 
 const slider = () => {
   return (
-    <Carousel autoPlay showArrows interval='3000' infiniteLoop>
+    <Carousel
+      showThumbs={false}
+      autoPlay
+      showArrows
+      interval='3000'
+      infiniteLoop
+    >
       <Slider
         hasImage={
           <Image

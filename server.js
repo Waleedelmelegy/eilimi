@@ -1,54 +1,60 @@
-const express = require('express')
+const { createServer } = require('http')
+const { parse } = require('url')
 const next = require('next')
-const middleware = require('i18next-http-middleware').default
 
-// const nextI18next = require('./i18n')
-const { i18n } = require('./next-i18next.config')
+const dev = process.env.NODE_ENV !== 'production'
+const hostname = 'localhost'
+const port = 3000
+// when using middleware `hostname` and `port` must be provided below
+const app = next({ dev, hostname, port })
+const handle = app.getRequestHandler()
 
-const port = process.env.PORT || 3000
-const app = next({ dev: process.env.NODE_ENV !== 'production' })
-const handle = app.getRequestHandler();
+app.prepare().then(() => {
+  createServer(async (req, res) => {
+    try {
+      // Be sure to pass `true` as the second argument to `url.parse`.
+      // This tells it to parse the query portion of the URL.
+      const parsedUrl = parse(req.url, true)
+      const { pathname, query } = parsedUrl
 
-(async () => {
-  await app.prepare()
-  const server = express()
-
-  server.use(middleware.handle(i18n))
-  // server.use(routesHandler);
-
-  server.get('*', (req, res) => {
-    handle(req, res)
+      if (pathname === '/a') {
+        await app.render(req, res, '/a', query)
+      } else if (pathname === '/b') {
+        await app.render(req, res, '/b', query)
+      } else {
+        await handle(req, res, parsedUrl)
+      }
+    } catch (err) {
+      console.error('Error occurred handling', req.url, err)
+      res.statusCode = 500
+      res.end('internal server error')
+    }
+  }).listen(port, err => {
+    if (err) throw err
+    console.log(`> Ready on http://${hostname}:${port}`)
   })
+})
+// const express = require('express')
+// const next = require('next')
+// // const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
-  await server.listen(port)
-  console.log(`> Ready on http://localhost:${port}`) // eslint-disable-line no-console
-})()
+// // const nextI18next = require('./i18n')
 
-// const { createServer } = require("http");
-// const { parse } = require("url");
-// const next = require("next");
-// const dev = process.env.NODE_ENV !== "production";
-
-// const port = !dev ? process.env.PORT : 3000;
-
-// // Create the Express-Next App
-// const app = next({ dev });
+// const port = process.env.PORT || 3000
+// const app = next({ dev: process.env.NODE_ENV !== 'production' })
 // const handle = app.getRequestHandler();
 
-// app
-//   .prepare()
-//   .then(() => {
-//     createServer((req, res) => {
-//       const parsedUrl = parse(req.url, true);
-//       const { pathname, query } = parsedUrl;
-//       handle(req, res, parsedUrl);
-//       console.log("pathname", pathname);
-//     }).listen(port, (err) => {
-//       if (err) throw err;
-//       console.log(`> Ready on http://localhost:${port}`);
-//     });
+// (async () => {
+//   await app.prepare()
+//   const server = express()
+
+//   // server.use(nextI18NextMiddleware(nextI18next));
+//   // server.use(routesHandler);
+
+//   server.get('*', (req, res) => {
+//     handle(req, res)
 //   })
-//   .catch((ex) => {
-//     console.error(ex.stack);
-//     process.exit(1);
-//   });
+
+//   await server.listen(port)
+//   console.log(`> Ready on http://localhost:${port}`) // eslint-disable-line no-console
+// })()
