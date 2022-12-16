@@ -1,8 +1,9 @@
 const express = require('express')
 const next = require('next')
-// const nextI18NextMiddleware = require('next-i18next/middleware').default;
+const middleware = require('i18next-http-middleware').default
 
 // const nextI18next = require('./i18n')
+const { i18n } = require('./next-i18next.config')
 
 const port = process.env.PORT || 3000
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
@@ -12,7 +13,7 @@ const handle = app.getRequestHandler();
   await app.prepare()
   const server = express()
 
-  // server.use(nextI18NextMiddleware(nextI18next));
+  server.use(middleware.handle(i18n))
   // server.use(routesHandler);
 
   server.get('*', (req, res) => {
