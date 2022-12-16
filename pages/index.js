@@ -16,8 +16,6 @@ import Explore from '../component/home/explore/explore'
 import Testimonial from '../component/home/testimonial/testimonial'
 import Clients from '../component/home/clients/clients'
 
-import { NextResponse } from 'next/server'
-
 const Home = ({ posts }) => {
   const router = useRouter()
   const { pathname } = router
