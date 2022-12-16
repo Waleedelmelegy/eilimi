@@ -16,6 +16,8 @@ import Explore from '../component/home/explore/explore'
 import Testimonial from '../component/home/testimonial/testimonial'
 import Clients from '../component/home/clients/clients'
 
+import { NextResponse } from 'next/server'
+
 const Home = ({ posts }) => {
   const router = useRouter()
   const { pathname } = router
@@ -48,13 +50,13 @@ const Home = ({ posts }) => {
     </Fragment>
   )
 }
-export const getServerSideProps = async context => {
+export const getServerSideProps = async ctx => {
   const [posts] = await Promise.all([apiSSR('blogs', null, 'GET')])
-  const direction = context.locale
+  const direction = ctx.locale
 
   return {
     props: {
-      ...(await serverSideTranslations(context.locale, ['common'])),
+      ...(await serverSideTranslations(ctx.locale, ['common'])),
       posts:
         posts.status === 200 && posts.data
           ? posts.data.sort(() => Math.random() - 0.5).slice(0, 4)

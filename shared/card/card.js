@@ -14,7 +14,7 @@ const card = ({
 }) => {
   return (
     <div className={styles.container}>
-      <Link href={url} alt={title}>
+      <Link href={url} title={title}>
         <div className={styles[className]}>
           {hasImage}
         </div>
