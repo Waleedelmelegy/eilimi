@@ -1,61 +1,73 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Icon from '../../../shared/icon/Icon'
 import styles from './footer.module.scss'
+import { useTranslation } from 'next-i18next'
 
-const footer = () => {
+const Footer = () => {
+  const { t } = useTranslation('footer')
+
   return (
     <footer className={`${styles.container} footer`}>
       <div className={styles.block1}>
-        <h4>Quick Link</h4>
+        <h4>
+          {t('QuickLinks')}
+        </h4>
         <nav>
           <ul>
             <li>
               <Link href='/' title='Eilimi Home'>
-                Home
+                {t('link_Home', { ns: 'common' })}
               </Link>
             </li>
             <li>
               <Link href='/about-us' title='About Eilimi'>
-                About
+                {t('link_About', { ns: 'common' })}
               </Link>
             </li>
             <li>
               <Link href='/our-services' title='our services'>
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href='/blogs' title='Eilimi Blogs'>
-                Blogs
+                {t('link_Services', { ns: 'common' })}
               </Link>
             </li>
             <li>
               <Link href='/solutions' title='Eilimi Solutions'>
-                Solutions
+                {t('link_Solutions', { ns: 'common' })}
+              </Link>
+            </li>
+            <li>
+              <Link href='/blogs' title='Eilimi Blogs'>
+                {t('link_Blogs', { ns: 'common' })}
               </Link>
             </li>
             <li>
               <Link href='/careers' title='Eilimi Careers'>
-                Careers
+                {t('link_Careers', { ns: 'common' })}
               </Link>
             </li>
             <li>
               <Link href='/contact-us' title='Eilimi Contact Us'>
-                Contact Us
+                {t('link_Contact', { ns: 'common' })}
               </Link>
             </li>
           </ul>
         </nav>
       </div>
       <div className={styles.block2}>
-        <h4>Contact</h4>
-        <p>40 Yasmin Street, 1st New Cairo, Cairo Governorate</p>
+        <h4>
+          {t('Contact')}
+        </h4>
         <p>
-          <Link href={'tel:00201550509996'}>(+20)1550509996</Link>
+          {t('Address')}
         </p>
-        <h4>About</h4>
+        <p>
+          <Link href={'tel:00201550509996'}>
+            {t('Phone')}
+          </Link>
+        </p>
+        <h4>
+          {t('About')}
+        </h4>
         <div className={styles.social}>
           <Link
             href={'https://www.facebook.com/eilimi'}
@@ -93,6 +105,4 @@ const footer = () => {
   )
 }
 
-footer.propTypes = {}
-
-export default footer
+export default Footer

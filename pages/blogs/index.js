@@ -7,9 +7,9 @@ import { useRouter } from 'next/router'
 import Information from '../../component/blogs/information'
 import ProjectForm from '../../component/shared/project-form/projectForm'
 import { apiSSR } from '../../utility/api'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const Blogs = ({posts}) => {
+const Blogs = ({ posts }) => {
   const router = useRouter()
   const { pathname } = router
   return (
@@ -50,13 +50,13 @@ const Blogs = ({posts}) => {
 export const getServerSideProps = async ctx => {
   const [posts] = await Promise.all([apiSSR('blogs', null, 'GET')])
   const direction = ctx.locale
-  
+
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale, ['common'])),
-      posts: posts?.status === 200 && posts?.data ? posts?.data : [],
+      ...(await serverSideTranslations(ctx.locale, ['common', 'footer'])),
+      posts: posts.status === 200 && posts.data ? posts.data : [],
       locale: direction
     }
-  };
+  }
 }
 export default Blogs

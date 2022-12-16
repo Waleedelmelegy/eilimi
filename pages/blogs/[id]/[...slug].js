@@ -57,7 +57,7 @@ export const getServerSideProps = async ctx => {
   const direction = ctx.locale
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale, ['common'])),
+      ...(await serverSideTranslations(ctx.locale, ['common', 'footer'])),
       post: post.status === 200 && post.data ? post.data[0] : [],
       posts:
         posts.status === 200 && posts.data
