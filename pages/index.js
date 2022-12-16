@@ -11,6 +11,7 @@ import Blogs from '../component/shared/blogs/blogs'
 import Careers from '../component/shared/careers/careers'
 import { apiSSR } from '../utility/api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import nextI18NextConfig from '../next-i18next.config.js'
 
 import Explore from '../component/home/explore/explore'
 import Testimonial from '../component/home/testimonial/testimonial'
@@ -54,7 +55,11 @@ export const getServerSideProps = async ctx => {
 
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale, ['common'])),
+      ...(await serverSideTranslations(
+        ctx.locale,
+        ['common'],
+        nextI18NextConfig
+      )),
       posts:
         posts.status === 200 && posts.data
           ? posts.data.sort(() => Math.random() - 0.5).slice(0, 4)
