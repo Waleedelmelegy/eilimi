@@ -22,8 +22,8 @@ const Clients = () => {
               <Image
                 src={i.image}
                 alt={'Eilimi Clinets'}
-                width={120}
-                height={120}
+                width={100}
+                height={100}
                 className='image'
               />
             </div>
