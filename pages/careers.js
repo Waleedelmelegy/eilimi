@@ -6,10 +6,13 @@ import SideBar from '../component/shared/sidebar/sidebar'
 import Career from '../component/shared/careers/careers'
 import { useRouter } from 'next/router'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const Careers = () => {
   const router = useRouter()
   const { pathname } = router
+  const { t } = useTranslation('carrers')
+
   return (
     <Fragment>
       <Head>
@@ -28,7 +31,9 @@ const Careers = () => {
         <main className='main'>
           <HeaderSolid>
             <h1>
-              <span>Careers </span>
+              <span>
+                {t('Careers')}{' '}
+              </span>
             </h1>
           </HeaderSolid>
           <Career />
@@ -45,7 +50,11 @@ export const getServerSideProps = async ctx => {
 
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale, ['common', 'footer'])),
+      ...(await serverSideTranslations(ctx.locale, [
+        'common',
+        'footer',
+        'careers'
+      ])),
       locale: direction
     }
   }

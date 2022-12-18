@@ -1,14 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Button from '../../../shared/button/button'
 import Icon from '../../../shared/icon/Icon'
-import Slider from '../../../shared/slider/slider'
+import Sliders from '../../../shared/slider/slider'
 import Image from '../../../shared/images'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
+import { useTranslation } from 'next-i18next'
 
-const slider = () => {
+const Slider = () => {
+  const { t } = useTranslation('common')
+
   return (
     <Carousel
       showThumbs={false}
@@ -17,7 +19,7 @@ const slider = () => {
       interval='3000'
       infiniteLoop
     >
-      <Slider
+      <Sliders
         hasImage={
           <Image
             src={'/assets/banner/01.jpg'}
@@ -40,12 +42,12 @@ const slider = () => {
           <Button
             className='fill'
             url={'/'}
-            title='Start Expolore'
+            title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />
         </p>
-      </Slider>
-      <Slider
+      </Sliders>
+      <Sliders
         hasImage={
           <Image
             src={'/assets/banner/home-02.jpg'}
@@ -67,12 +69,12 @@ const slider = () => {
           <Button
             className='fill'
             url={'/'}
-            title='Start Expolore'
+            title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />
         </p>
-      </Slider>
-      <Slider
+      </Sliders>
+      <Sliders
         hasImage={
           <Image
             src={'/assets/banner/home-03.jpg'}
@@ -93,15 +95,13 @@ const slider = () => {
           <Button
             className='fill'
             url={'/'}
-            title='Start Expolore'
+            title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />
         </p>
-      </Slider>
+      </Sliders>
     </Carousel>
   )
 }
 
-slider.propTypes = {}
-
-export default slider
+export default Slider

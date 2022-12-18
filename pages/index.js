@@ -39,7 +39,7 @@ const Home = ({ posts }) => {
           <Brands />
           <Services />
           <Explore />
-          {/* <Blogs posts={posts} /> */}
+          <Blogs posts={posts} />
           <Clients />
           <Testimonial />
           <Careers />
@@ -50,20 +50,20 @@ const Home = ({ posts }) => {
   )
 }
 export const getServerSideProps = async ctx => {
-  // const [posts] = await Promise.all([apiSSR('blogs', null, 'GET')])
+  const [posts] = await Promise.all([apiSSR('blogs', null, 'GET')])
   const direction = ctx.locale
 
   return {
     props: {
       ...(await serverSideTranslations(
         ctx.locale,
-        ['common', 'footer'],
+        ['common', 'footer', 'careers'],
         nextI18NextConfig
       )),
-      // posts:
-      //   posts.status === 200 && posts.data
-      //     ? posts.data.sort(() => Math.random() - 0.5).slice(0, 4)
-      //     : [],
+      posts:
+        posts.status === 200 && posts.data
+          ? posts.data.sort(() => Math.random() - 0.5).slice(0, 4)
+          : [],
       locale: direction
     }
   }

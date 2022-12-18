@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './ourDNA.module.scss'
-const ourDNA = () => {
+import { useTranslation } from 'next-i18next'
+const OurDNA = () => {
+  const { t } = useTranslation('about-us')
   return (
     <div className={styles.container}>
       <h3>
-        Eilimi <span>DNA</span>
+        {t('EilimiDNA')}
       </h3>
       <div className={styles.links}>
         <Link className={styles.round} href={'/'} title='Strategies'>
@@ -17,7 +19,9 @@ const ourDNA = () => {
             width={163}
             height={130}
           />
-          <h4>Strategies</h4>
+          <h4>
+            {t('Strategies')}
+          </h4>
         </Link>
         <Link className={styles.round} href={'/'} title='Digitize'>
           <Image
@@ -26,7 +30,9 @@ const ourDNA = () => {
             width={163}
             height={152}
           />
-          <h4>Digitize</h4>
+          <h4>
+            {t('Digitize')}
+          </h4>
         </Link>
         <Link className={styles.round} href={'/'} title='Monetize'>
           <Image
@@ -35,13 +41,13 @@ const ourDNA = () => {
             width={163}
             height={152}
           />
-          <h4>Monetize</h4>
+          <h4>
+            {t('Monetize')}
+          </h4>
         </Link>
       </div>
     </div>
   )
 }
 
-ourDNA.propTypes = {}
-
-export default ourDNA
+export default OurDNA

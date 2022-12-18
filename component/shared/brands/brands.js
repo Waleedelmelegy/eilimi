@@ -1,9 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './brands.module.scss'
 import Card from '../../../shared/card/card'
 import Image from '../../../shared/images'
-const brands = () => {
+import { useTranslation } from 'next-i18next'
+
+const Brands = () => {
+  const { t } = useTranslation('common')
+
   return (
     <div className={styles.container}>
       <h3>
@@ -25,7 +28,7 @@ const brands = () => {
             url={'https://www.clinicsapp.net/'}
             type='transparent'
             className={'image'}
-            button='Start Explore'
+            button={t('StartExplore')}
           />
         </div>
         <div className={styles.cards}>
@@ -43,7 +46,7 @@ const brands = () => {
             url={'/'}
             type='transparent'
             className={'image'}
-            button='Start Explore'
+            button={t('StartExplore')}
           />
         </div>
         <div className={styles.cards}>
@@ -61,7 +64,7 @@ const brands = () => {
             url={'/'}
             type='transparent'
             className={'image'}
-            button='Start Explore'
+            button={t('StartExplore')}
           />
         </div>
       </div>
@@ -69,6 +72,4 @@ const brands = () => {
   )
 }
 
-brands.propTypes = {}
-
-export default brands
+export default Brands

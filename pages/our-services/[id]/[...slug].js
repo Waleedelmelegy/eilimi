@@ -33,7 +33,7 @@ const Slug = ({ services }) => {
         <SideBar pathname={pathname} />
         <main className='main'>
           <HeaderSolid>
-            <h2>Strategize</h2>
+            {/* <h2>Strategize</h2> */}
             <h1>
               {services.name}
             </h1>

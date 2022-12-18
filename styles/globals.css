@@ -55,7 +55,7 @@ label {
   display: block;
 }
 
-input, textarea {
+input, textarea, select {
   background: #E6E6E6;
   font-size: .75rem;
   padding: .85rem;

@@ -1,10 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './explore.module.scss'
 import Image from '../../../shared/images'
 import Button from '../../../shared/button/button'
 import Icon from '../../../shared/icon/Icon'
+import { useTranslation } from 'next-i18next'
+
 const Explore = () => {
+  const { t } = useTranslation('common')
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -29,7 +31,7 @@ const Explore = () => {
             <Button
               className='fill'
               url={'/about-us'}
-              title='Start Expolore'
+              title={t('StartExplore')}
               hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
             />
           </p>
@@ -52,7 +54,5 @@ const Explore = () => {
     </div>
   )
 }
-
-Explore.propTypes = {}
 
 export default Explore
