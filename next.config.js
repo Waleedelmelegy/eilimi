@@ -5,7 +5,7 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: {
-    domains: ['www.eilimi.ai']
+    domains: ['www.eilimi.ai', 'admin.eilimi.ai']
   }
 }
 
