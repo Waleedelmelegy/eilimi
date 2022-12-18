@@ -3,6 +3,8 @@ import styles from './projectForm.module.scss'
 import Button from '../../../shared/button/button'
 import Maskblocks from '../../../shared/maskblocks'
 import { Formik } from 'formik'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { apiSSR } from '../../../utility/api'
 
 const ProjectForm = () => {
@@ -17,6 +19,18 @@ const ProjectForm = () => {
   }, [])
   return (
     <div className={`bg-black ${styles.container}`}>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
       <div className={styles.left}>
         <h3>
           Start your Next <span> Project</span> With us
@@ -56,7 +70,7 @@ const ProjectForm = () => {
               }
               return errors
             }}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values, { setSubmitting, resetForm }) => {
               setTimeout(() => {
                 // alert(JSON.stringify(values, null, 2))
                 setSubmitting(false)
@@ -72,7 +86,11 @@ const ProjectForm = () => {
                   'POST'
                 ).then(res => {
                   if (res.status === 200) {
-                    console.log(res.msg)
+                    toast.success(res.msg)
+
+                    resetForm()
+                  } else {
+                    toast.warn('Please fix missing data')
                   }
                 })
               }, 400)
@@ -98,7 +116,9 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.firstname}
                   />
-                  {errors.firstname && touched.firstname && errors.firstname}
+                  <span className={styles.errors}>
+                    {errors.firstname && touched.firstname && errors.firstname}
+                  </span>
                 </div>
                 <div className='form-group w-48'>
                   <label htmlFor='lastname'>Last Name</label>
@@ -110,7 +130,9 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.lastname}
                   />
-                  {errors.lastname && touched.lastname && errors.lastname}
+                  <span className={styles.errors}>
+                    {errors.lastname && touched.lastname && errors.lastname}
+                  </span>
                 </div>
                 <div className='form-group w-100'>
                   <label htmlFor='phone'>Phone Number </label>
@@ -122,7 +144,9 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.phone}
                   />
-                  {errors.phone && touched.phone && errors.phone}
+                  <span className={styles.errors}>
+                    {errors.phone && touched.phone && errors.phone}
+                  </span>
                 </div>
                 <div className='form-group w-100'>
                   <label htmlFor='email'>E-mail </label>
@@ -134,7 +158,9 @@ const ProjectForm = () => {
                     onBlur={handleBlur}
                     value={values.email}
                   />
-                  {errors.email && touched.email && errors.email}
+                  <span className={styles.errors}>
+                    {errors.email && touched.email && errors.email}
+                  </span>
                 </div>
                 <div className='form-group w-100'>
                   <label htmlFor='message'>Services </label>
