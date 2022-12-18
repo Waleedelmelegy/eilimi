@@ -10,7 +10,6 @@ const Clients = () => {
       setClinets(respnse.data)
     })
   }, [])
-  console.log(clients)
   return (
     <div className={styles.container}>
       <h3>
