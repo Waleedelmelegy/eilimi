@@ -10,7 +10,7 @@ const Pillers = () => {
         <div className={styles.box}>
           <h4>CUSTOMERS</h4>
           <p>
-            Your business growth startsat understanding your customers’
+            Your business growth startsat understanding your customers&apos;
             behavior, their needs,hope threats, and how theyperform against your
             offeringsand the competition offers aswell. Eilimi customer success
             practice will boost your customer acquisition, development, and
@@ -21,7 +21,7 @@ const Pillers = () => {
         <div className={styles.box}>
           <h4>PEOPLE</h4>
           <p>
-            It’s all about your people, so Eilimi devoted much time tounder
+            It&apos;s all about your people, so Eilimi devoted much time tounder
             standing people and their interactions, communication, and decision
             making in the work-place and their generation based behaviors.
             Eilimi programs secure the efficiency and effectiveness of every

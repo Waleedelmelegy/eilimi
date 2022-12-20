@@ -1,9 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './commitment.module.scss'
 import Image from '../../../shared/images'
-import Button from '../../../shared/button/button'
-import Icon from '../../../shared/icon/Icon'
+
 const Commitment = () => {
   return (
     <div className={styles.container}>
@@ -39,7 +37,5 @@ const Commitment = () => {
     </div>
   )
 }
-
-Commitment.propTypes = {}
 
 export default Commitment

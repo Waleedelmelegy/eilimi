@@ -49,6 +49,19 @@
       .block {
         border-right: 0;
         width: 50%;
+        &:nth-child(2),
+        &:nth-child(4),
+        &:nth-child(6) {
+          border-right: 0;
+        }
+        &:nth-child(1),
+        &:nth-child(3),
+        &:nth-child(5) {
+          border-right: 3px solid #fac213cf;
+        }
+        &:nth-child(4) {
+          border-bottom: 3px solid #fac213cf;
+        }
         a {
           h4 {
             font-size: 0.9rem;

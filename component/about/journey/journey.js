@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './journey.module.scss'
 import Image from '../../../shared/images'
 const journey = () => {
@@ -12,8 +11,8 @@ const journey = () => {
         </h3>
         <p>
           <strong>Eilimi</strong> seeks to bridge the gap between strategy and
-          action through technology. We're pioneers in business development,
-          demand generation, problem-solving, automation, and{' '}
+          action through technology. We&apos;re pioneers in business
+          development, demand generation, problem-solving, automation, and{' '}
           <strong>digital transformation.</strong>
         </p>
       </div>
@@ -29,7 +28,5 @@ const journey = () => {
     </div>
   )
 }
-
-journey.propTypes = {}
 
 export default journey

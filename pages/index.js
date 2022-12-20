@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Footer from '../component/shared/footer/footer'
 import Banner from '../component/home/banner/banner'
@@ -20,6 +20,19 @@ import Clients from '../component/home/clients/clients'
 const Home = ({ posts, locale }) => {
   const router = useRouter()
   const { pathname } = router
+  const [dimensions, setDimensions] = useState({
+    height: typeof window !== 'undefined' && window.innerHeight,
+    width: typeof window !== 'undefined' && window.innerWidth
+  })
+  useEffect(() => {
+    const handleResize = () => {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }
+    window.addEventListener('resize', handleResize)
+  }, [])
   return (
     <Fragment>
       <Head>
@@ -55,9 +68,9 @@ const Home = ({ posts, locale }) => {
           <Brands />
           <Services />
           <Explore />
-          <Blogs posts={posts} />
+          <Blogs posts={posts} dimensions={dimensions} />
           <Clients />
-          <Testimonial />
+          <Testimonial dimensions={dimensions} />
           <Careers />
           <Footer />
         </main>

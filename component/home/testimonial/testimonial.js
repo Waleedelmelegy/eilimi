@@ -9,7 +9,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
-const Testimonial = () => {
+const Testimonial = ({ dimensions }) => {
   return (
     <div className={`bg-dark ${styles.container}`}>
       <h3>
@@ -17,14 +17,12 @@ const Testimonial = () => {
       </h3>
       <div className={styles.testimonial}>
         <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
+          spaceBetween={dimensions.width >= 900 ? 20 : 5}
+          slidesPerView={dimensions.width >= 900 ? 2 : 1}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={swiper => console.log(swiper)}
         >
           <SwiperSlide>
             <div className={styles.block}>

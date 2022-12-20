@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Slider from '../../../shared/slider/slider'
 import Image from '../../../shared/images'
 
@@ -19,9 +18,9 @@ const slider = () => {
       <h2>About Eilimi</h2>
       <h1 style={{ fontSize: '2.25rem' }}>
         Business Is People; <br />
-        If You Don’t Understand <br />
+        If You Don&apos;t Understand <br />
         <span>People, </span> <br />
-        You Don't Understand <br />
+        You Don&apos;t Understand <br />
         Business.
       </h1>
       <p>
@@ -35,7 +34,5 @@ const slider = () => {
     </Slider>
   )
 }
-
-slider.propTypes = {}
 
 export default slider

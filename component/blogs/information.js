@@ -1,7 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
-import Icon from '../../shared/icon/Icon'
 import styles from './information.module.scss'
 import Card from '../../shared/card/card'
 import Image from '../../shared/images'
@@ -27,7 +24,9 @@ const Information = ({ posts }) => {
                 />
               }
               title={item.title}
-              url={`/blogs/${item.id}/${item.title.replaceAll(' ', '-')}`}
+              url={`/blogs/${item.id}/${item.title
+                .replaceAll(' ', '-')
+                .substring(0, 90)}`}
               type={'fill'}
               className={'mask'}
             />
@@ -37,7 +36,5 @@ const Information = ({ posts }) => {
     </div>
   )
 }
-
-Information.propTypes = {}
 
 export default Information

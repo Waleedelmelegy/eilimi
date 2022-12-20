@@ -10,7 +10,11 @@ const OurDNA = () => {
     <div className={styles.container}>
       <h3 dangerouslySetInnerHTML={{ __html: `${t('EilimiDNA')}` }} />
       <div className={styles.links}>
-        <Link className={styles.round} href={'/'} title='Strategies'>
+        <Link
+          className={styles.round}
+          href={'/our-services'}
+          title='Strategies'
+        >
           <Image
             src={'/assets/ser-icon-01.svg'}
             alt='Eilimi Strategies'
@@ -21,7 +25,7 @@ const OurDNA = () => {
             {t('Strategies')}
           </h4>
         </Link>
-        <Link className={styles.round} href={'/'} title='Digitize'>
+        <Link className={styles.round} href={'/our-services'} title='Digitize'>
           <Image
             src={'/assets/ser-icon-02.svg'}
             alt='Eilimi Digitize'
@@ -32,7 +36,7 @@ const OurDNA = () => {
             {t('Digitize')}
           </h4>
         </Link>
-        <Link className={styles.round} href={'/'} title='Monetize'>
+        <Link className={styles.round} href={'/our-services'} title='Monetize'>
           <Image
             src={'/assets/ser-icon-03.svg'}
             alt='Eilimi Monetize'

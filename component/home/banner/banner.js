@@ -41,7 +41,7 @@ const Slider = () => {
           marketing, sales, andorganizational development strategies. <br />
           <Button
             className='fill'
-            url={'/'}
+            url={'/about-us'}
             title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />
@@ -68,7 +68,7 @@ const Slider = () => {
           is digested as well. Enjoy your success journey with us <br />
           <Button
             className='fill'
-            url={'/'}
+            url={'/about-us'}
             title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />
@@ -90,11 +90,11 @@ const Slider = () => {
           <span> People.</span>
         </h1>
         <p>
-          If You Don’t Understand People, You Don't Understand Business so
-          customer experience really matters. <br />
+          If You Don&apos;t Understand People, You Don&apos;t Understand
+          Business so customer experience really matters. <br />
           <Button
             className='fill'
-            url={'/'}
+            url={'/about-us'}
             title={t('StartExplore')}
             hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
           />

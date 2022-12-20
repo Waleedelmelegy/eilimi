@@ -26,20 +26,18 @@ const Slug = ({ post, posts, locale }) => {
         />
         <meta
           property='og:url'
-          content={`https://www.eilimi.ai/${locale}/${post.id}/${post.title.replace(
-            ' ',
-            '-'
-          )}`}
+          content={`https://www.eilimi.ai/${locale}/${post.id}/${post.title
+            .replaceAll(' ', '-')
+            .substring(0, 90)}`}
           key='url'
         />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
         <link
           rel='canonical'
-          href={`https://www.eilimi.ai/${locale}/${post.id}/${post.title.replace(
-            ' ',
-            '-'
-          )}`}
+          href={`https://www.eilimi.ai/${locale}/${post.id}/${post.title
+            .replaceAll(' ', '-')
+            .substring(0, 90)}`}
         />
       </Head>
       <SideBar pathname={pathname} />

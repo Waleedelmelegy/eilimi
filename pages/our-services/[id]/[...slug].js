@@ -14,7 +14,6 @@ import Details from '../../../component/services/details/details'
 const Slug = ({ services, locale }) => {
   const router = useRouter()
   const { pathname } = router
-  console.log(services)
   return (
     <Fragment>
       <Head>

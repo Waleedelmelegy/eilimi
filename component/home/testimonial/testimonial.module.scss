@@ -81,19 +81,20 @@
       padding-bottom: 2rem;
     }
     .testimonial {
-      flex-direction: column;
       .block {
-        margin-bottom: 1rem;
-        width: 100%;
-        &::before {
-          width: 50px;
-          height: 50px;
-          top: -5%;
-        }
-        &::after {
-          width: 70px;
-          height: 70px;
-          bottom: -5%;
+        .border {
+          margin-bottom: 1rem;
+          width: 100%;
+          &::before {
+            width: 50px;
+            height: 50px;
+            top: 2%;
+          }
+          &::after {
+            width: 50px;
+            height: 50px;
+            bottom: 2%;
+          }
         }
       }
     }

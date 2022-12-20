@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
 import styles from './details.module.scss'
 import Image from '../../../shared/images'
@@ -59,7 +58,9 @@ const Details = ({ post, posts }) => {
                   />
                 }
                 title={item.title}
-                url={`/blogs/${item.id}/${item.title.replaceAll(' ', '-')}`}
+                url={`/blogs/${item.id}/${item.title
+                  .replaceAll(' ', '-')
+                  .substring(0, 90)}`}
                 type={'fill'}
                 className={'mask'}
               />
@@ -70,7 +71,5 @@ const Details = ({ post, posts }) => {
     </div>
   )
 }
-
-Details.propTypes = {}
 
 export default Details
