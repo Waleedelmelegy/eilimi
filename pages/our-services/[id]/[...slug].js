@@ -11,21 +11,49 @@ import { apiSSR } from '../../../utility/api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Details from '../../../component/services/details/details'
 
-const Slug = ({ services }) => {
+const Slug = ({ services, locale }) => {
   const router = useRouter()
   const { pathname } = router
   console.log(services)
   return (
     <Fragment>
       <Head>
-        <title>Eilimi - Services</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
-        <meta property='og:description' content='Eilimi' key='description' />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <title>
+          Eilimi - {services.name}
+        </title>
+        <meta
+          property='og:title'
+          content={`Eilimi ${services.name}`}
+          key='title'
+        />
+        <meta
+          name='description'
+          content={`Eilimi ${services.description
+            .replace(/<[^>]*>?/gm, '')
+            .substring(0, 140)}}`}
+        />
+
+        <meta
+          property='og:description'
+          content={`Eilimi ${services.description
+            .replace(/<[^>]*>?/gm, '')
+            .substring(0, 140)}`}
+          key='description'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/${services.id}/${services.url}`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/our-services' />
+        <link
+          rel='canonical'
+          href={`https://www.eilimi.ai/${locale}/${services.id}/${services.name.replace(
+            ' ',
+            '-'
+          )}`}
+        />
       </Head>
       <SideBar pathname={pathname} />
 

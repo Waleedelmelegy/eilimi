@@ -33,7 +33,7 @@ const Buttons = ({
 
 Buttons.propTypes = {
   className: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   title: PropTypes.string.isRequired
 }
 

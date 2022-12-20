@@ -9,24 +9,31 @@ import ProjectForm from '../../component/shared/project-form/projectForm'
 import { apiSSR } from '../../utility/api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const Blogs = ({ posts }) => {
+const Blogs = ({ posts, locale }) => {
   const router = useRouter()
   const { pathname } = router
   return (
     <Fragment>
       <Head>
         <title>Eilimi - Blogs</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
+        <meta
+          name='description'
+          content='Eilimi Blogs, Here you can get all the Information you need to grow your business and figure out all the the most interesting news about Technology and Business.'
+        />
+        <meta property='og:title' content='Eilimi - Blogs' key='title' />
         <meta
           property='og:description'
-          content='Eilimi Blogs'
+          content='Eilimi Blogs, Here you can get all the Information you need to grow your business and figure out all the the most interesting news about Technology and Business.'
           key='description'
         />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/blogs`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/blogs' />
+        <link rel='canonical' href={`https://www.eilimi.ai/${locale}/blogs`} />
       </Head>
       <SideBar pathname={pathname} />
 

@@ -24,7 +24,7 @@ const headerSolid = ({ children }) => {
 }
 
 headerSolid.propTypes = {
-  h1: PropTypes.element.isRequired
+  h1: PropTypes.element
 }
 
 export default headerSolid

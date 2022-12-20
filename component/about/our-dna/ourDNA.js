@@ -8,9 +8,7 @@ const OurDNA = () => {
   const { t } = useTranslation('about-us')
   return (
     <div className={styles.container}>
-      <h3>
-        {t('EilimiDNA')}
-      </h3>
+      <h3 dangerouslySetInnerHTML={{ __html: `${t('EilimiDNA')}` }} />
       <div className={styles.links}>
         <Link className={styles.round} href={'/'} title='Strategies'>
           <Image

@@ -8,20 +8,34 @@ import Information from '../component/contact-us/information'
 import ProjectForm from '../component/shared/project-form/projectForm'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const ContactUs = () => {
+const ContactUs = ({ locale }) => {
   const router = useRouter()
   const { pathname } = router
   return (
     <Fragment>
       <Head>
         <title>Eilimi - Contact Us</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
-        <meta property='og:description' content='Eilimi' key='description' />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <meta property='og:title' content='Eilimi - Contact Us' key='title' />
+        <meta
+          name='description'
+          content='Contact Us Now and we will get back to you as soon as possible …'
+        />
+        <meta
+          property='og:description'
+          content='Contact Us Now and we will get back to you as soon as possible …'
+          key='description'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/contact-us`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/' />
+        <link
+          rel='canonical'
+          href={`https://www.eilimi.ai/${locale}/contact-us`}
+        />
       </Head>
       <SideBar pathname={pathname} />
 

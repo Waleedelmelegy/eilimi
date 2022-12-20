@@ -18,7 +18,7 @@ const Explore = () => {
             Eilimi seeks to bridge the gap between strategy and action through
             technology. When it comes to business transformation, we give you
             proper outcomes that tackle all stipulated business objectives.
-            We're pioneers in business development, demand generation, problem
+            {/* We're pioneers in business development, demand generation, problem
             solving, automation, and digital transformation. Our marketing,
             sales, and organizational development techniques provide you with
             accurate results. At Eilimi, everything is methodological and
@@ -26,7 +26,7 @@ const Explore = () => {
             the time. We believe in; Business is people. If you don’t understand
             people, you don’t understand business. As no one size fits all, no
             case is similar to another; we have to figure out a new way of doing
-            things every time.
+            things every time. */}
             <br />
             <Button
               className='fill'

@@ -40,7 +40,7 @@ const Careers = () => {
         <p>
           {t('Desc')}
         </p>
-        {pathname !== '/careers' &&
+        {/* {pathname !== '/careers' &&
           <Button
             className='fill'
             url={'/'}
@@ -53,7 +53,7 @@ const Careers = () => {
                 fill={'black'}
               />
             }
-          />}
+          />} */}
       </div>
 
       <div className={styles.right}>

@@ -16,8 +16,6 @@ body {
   margin: 0;
   font-family: "Noto", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: white;
-
 }
 
 body::-webkit-scrollbar {
@@ -172,8 +170,8 @@ h1 span::after, h2 span::after, h3 span::after {
   }
 
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
 
 

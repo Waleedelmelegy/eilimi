@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
-const Careers = () => {
+const Careers = ({ locale }) => {
   const router = useRouter()
   const { pathname } = router
   const { t } = useTranslation('carrers')
@@ -17,13 +17,27 @@ const Careers = () => {
     <Fragment>
       <Head>
         <title>Eilimi - Careers</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
-        <meta property='og:description' content='Eilimi' key='description' />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <meta
+          name='description'
+          content='Eilimi is more than a company | We are Family. Join Our Family. You can join us now by filling out the form on our Careers Page.'
+        />
+        <meta property='og:title' content='Eilimi - Careers' key='title' />
+        <meta
+          property='og:description'
+          content='Eilimi is more than a company | We are Family. Join Our Family. You can join us now by filling out the form on our Careers Page.'
+          key='description'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/careers`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/' />
+        <link
+          rel='canonical'
+          href={`https://www.eilimi.ai/${locale}/careers`}
+        />
       </Head>
       <SideBar pathname={pathname} />
 

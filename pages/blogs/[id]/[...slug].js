@@ -8,24 +8,39 @@ import ProjectForm from '../../../component/shared/project-form/projectForm'
 import { apiSSR } from '../../../utility/api'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Details from '../../../component/blogs/details/details'
-const Slug = ({ post, posts }) => {
+const Slug = ({ post, posts, locale }) => {
   const router = useRouter()
   const { pathname } = router
   return (
     <Fragment>
       <Head>
-        <title>Eilimi - Blogs</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
+        <title>
+          Eilimi - Blogs, {post.title}
+        </title>
+        <meta name='description' content={post.short_content} />
+        <meta property='og:title' content={post.title} key='title' />
         <meta
           property='og:description'
-          content='Eilimi Blogs'
+          content={post.short_content}
           key='description'
         />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/${post.id}/${post.title.replace(
+            ' ',
+            '-'
+          )}`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/blogs' />
+        <link
+          rel='canonical'
+          href={`https://www.eilimi.ai/${locale}/${post.id}/${post.title.replace(
+            ' ',
+            '-'
+          )}`}
+        />
       </Head>
       <SideBar pathname={pathname} />
 

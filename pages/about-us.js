@@ -12,20 +12,34 @@ import { useRouter } from 'next/router'
 import Commitment from '../component/about/commitment/commitment'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const About = () => {
+const About = ({ locale }) => {
   const router = useRouter()
   const { pathname } = router
   return (
     <Fragment>
       <Head>
         <title>Eilimi - About Us</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
-        <meta property='og:description' content='Eilimi' key='description' />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <meta
+          name='description'
+          content='We are business developers, demand generators, problem solvers, and business automation and digital transformation experts.'
+        />
+        <meta property='og:title' content='Eilimi - About Us' key='title' />
+        <meta
+          property='og:description'
+          content='We are business developers, demand generators, problem solvers, and business automation and digital transformation experts.'
+          key='description'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}/about-us`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/' />
+        <link
+          rel='canonical'
+          href={`https://www.eilimi.ai/${locale}/about-us`}
+        />
       </Head>
       <SideBar pathname={pathname} />
 
@@ -50,7 +64,11 @@ export const getServerSideProps = async ctx => {
 
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale, ['common', 'footer'])),
+      ...(await serverSideTranslations(ctx.locale, [
+        'common',
+        'footer',
+        'about-us'
+      ])),
       locale: direction
     }
   }

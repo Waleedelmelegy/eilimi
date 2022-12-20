@@ -5,11 +5,7 @@ const Pillers = () => {
   const { t } = useTranslation('about-us')
   return (
     <div className={`bg-dark ${styles.container}`}>
-      <h3>
-        <span>
-          {t('OurPillers')}
-        </span>
-      </h3>
+      <h3 dangerouslySetInnerHTML={{ __html: `${t('OurPillers')}` }} />
       <div className={styles.boxContainer}>
         <div className={styles.box}>
           <h4>CUSTOMERS</h4>

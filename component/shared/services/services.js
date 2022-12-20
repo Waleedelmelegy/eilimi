@@ -17,13 +17,13 @@ const services = () => {
           action through technology. We're pioneers in business development,
           demand generation, problem-solving, automation, and{' '}
           <strong>digital transformation.</strong>
-          <Button
-            className='fill'
-            url={'/our-services'}
-            title='Expolore Services'
-            hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
-          />
         </p>
+        <Button
+          className='fill'
+          url={'/our-services'}
+          title='Expolore Services'
+          hasIcon={<Icon width={13} height={13} name={'arrow-right'} />}
+        />
       </div>
       <div className={styles.content}>
         <Image

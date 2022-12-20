@@ -17,20 +17,36 @@ import Explore from '../component/home/explore/explore'
 import Testimonial from '../component/home/testimonial/testimonial'
 import Clients from '../component/home/clients/clients'
 
-const Home = ({ posts }) => {
+const Home = ({ posts, locale }) => {
   const router = useRouter()
   const { pathname } = router
   return (
     <Fragment>
       <Head>
-        <title>Eilimi</title>
-        <meta name='description' content='Eilimi' />
-        <meta property='og:title' content='Eilimi Ai' key='title' />
-        <meta property='og:description' content='Eilimi' key='description' />
-        <meta property='og:url' content='https://www.eilimi.ai/' key='url' />
+        <title>Eilimi is a Tech-driven business development</title>
+        <meta
+          property='og:title'
+          content='Eilimi is a Tech-driven business development'
+          key='title'
+        />
+        <meta
+          name='description'
+          content='Eilimi is a Tech-driven business development, Customer Experience, and Management consulting'
+        />
+
+        <meta
+          property='og:description'
+          content='Eilimi is a Tech-driven business development, Customer Experience, and Management consulting'
+          key='description'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.eilimi.ai/${locale}`}
+          key='url'
+        />
         <meta property='og:image' content='/assets/logo.svg' key='image' />
         <link rel='apple-touch-icon' href='/assets/logo.svg' />
-        <link rel='canonical' href='https://www.eilimi.ai/' />
+        <link rel='canonical' href={`https://www.eilimi.ai/${locale}`} />
       </Head>
       <div className='container'>
         <SideBar pathname={pathname} />

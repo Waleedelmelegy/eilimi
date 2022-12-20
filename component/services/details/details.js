@@ -1,9 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
 import styles from './details.module.scss'
 import Image from '../../../shared/images'
-import Card from '../../../shared/card/card'
 
 const Details = ({ services }) => {
   return (
@@ -48,7 +46,5 @@ const Details = ({ services }) => {
     </div>
   )
 }
-
-Details.propTypes = {}
 
 export default Details
